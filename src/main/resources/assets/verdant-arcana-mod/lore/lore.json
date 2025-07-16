@@ -1,0 +1,28 @@
+{
+  "lore": {
+    "origins": [
+      "Long ago, witches bound secrets to stone...",
+      "These secrets still echo..."
+    ],
+    "moon_phases": [
+      "Moonlight waxes and wanes...",
+      "Each phase opens new pathways..."
+    ],
+    "charms": [
+      "Charms imbued with silver dust...",
+      "They glow under lunar phases..."
+    ],
+    "rituals": [
+      "Rituals call upon ancient energy...",
+      "Timing is key."
+    ],
+    "entities": [
+      "Entities guard sacred knowledge...",
+      "Tread carefully."
+    ],
+    "spells": [
+      "Spells are etched in forgotten tongues...",
+      "Speak with intent."
+    ]
+  }
+}

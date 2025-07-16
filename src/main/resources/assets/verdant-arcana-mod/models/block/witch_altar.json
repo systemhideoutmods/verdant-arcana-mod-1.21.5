@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/enchanting_table",
+  "textures": {
+    "top": "verdant-arcana-mod:block/witch_altar_top",
+    "side": "verdant-arcana-mod:block/witch_altar_side",
+    "bottom": "verdant-arcana-mod:block/witch_altar_bottom"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "verdant-arcana-mod:block/lavender_crop_stage2"
+  }
+}

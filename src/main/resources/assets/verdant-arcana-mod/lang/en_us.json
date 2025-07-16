@@ -1,0 +1,40 @@
+{
+  "item.verdant-arcana-mod.moonstone": "Moonstone",
+  "item.verdant-arcana-mod.raw_moonstone": "Raw Moonstone",
+  "item.verdant-arcana-mod.lavender": "Lavender",
+  "item.verdant-arcana-mod.lavender_seeds": "Lavender Seeds",
+  "item.verdant-arcana-mod.sage": "Sage",
+  "item.verdant-arcana-mod.sage_seeds": "Sage Seeds",
+  "item.verdant-arcana-mod.mugwort": "Mugwort",
+  "item.verdant-arcana-mod.mugwort_seeds": "Mugwort Seeds",
+  "item.verdant-arcana-mod.mandrake": "Mandrake",
+  "item.verdant-arcana-mod.mandrake_seeds": "Mandrake Root",
+
+  "item.verdant-arcana-mod.blank_token": "Blank Token",
+  "item.verdant-arcana-mod.moon_token_1": "New Moon Token",
+  "item.verdant-arcana-mod.moon_token_2": "Waning Moon Token",
+  "item.verdant-arcana-mod.moon_token_3": "Waxing Moon Token",
+  "item.verdant-arcana-mod.moon_token_4": "Full Moon Token",
+
+  "block.verdant-arcana-mod.moonstone_block": "Block of Moonstone",
+  "block.verdant-arcana-mod.raw_moonstone_block": "Block of Raw Moonstone",
+
+  "block.verdant-arcana-mod.moonstone_ore:": "Moonstone Ore",
+  "block.verdant-arcana-mod.moonstone_deepslate_ore": "Moonstone Deepslate Ore",
+
+  "block.verdant-arcana-mod.lavender_crop": "Lavender",
+  "block.verdant-arcana-mod.sage_crop": "Sage",
+  "block.verdant-arcana-mod.mugwort_crop": "Mugwort",
+  "block.verdant-arcana-mod.mandrake_crop": "Mandrake",
+
+  "block.verdant-arcana-mod.witch_altar": "Witch Altar",
+
+  "itemgroup.witch_items": "Witch Items",
+
+  "screen.verdant-arcana-mod.recipe_book": "Witch Recipe Book",
+  "item.verdant-arcana-mod.cresent_lexicon": "Cresent Lexicon",
+  "item.verdant-arcana-mod.cresent_lexicon.tooltip": "Right-click to open your lore and recipes",
+
+  "advancement.verdant-arcana-mod.moon_fledgling.title": "Moon Fledgling",
+  "advancement.verdant-arcana-mod.moon_fledgling.desc": "You have taken your first step under the moon's watchful eye."
+}
