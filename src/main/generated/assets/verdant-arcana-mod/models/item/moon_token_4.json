@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "verdant-arcana-mod:item/moon_token_4"
+  }
+}

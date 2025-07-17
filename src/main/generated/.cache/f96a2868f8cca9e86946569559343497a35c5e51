@@ -1,0 +1,4 @@
+// 1.21.5	-999999999-01-01T00:00:00	Verdant Arcana Mod/Tags for minecraft:block
+5dee233ebfe7bffcecd3089fcbc9f8ee669e3613 data/minecraft/tags/block/mineable/pickaxe.json
+621dc5825d08768cf23c62fe00ac8707c2858c77 data/minecraft/tags/block/needs_diamond_tool.json
+16762e3b55e30aadea05bd39783c36bf521c974a data/minecraft/tags/block/needs_iron_tool.json

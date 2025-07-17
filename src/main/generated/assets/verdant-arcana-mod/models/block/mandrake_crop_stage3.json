@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "verdant-arcana-mod:block/mandrake_crop_stage3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:bone",
+    "M": "verdant-arcana-mod:moonstone"
+  },
+  "pattern": [
+    " M ",
+    " B ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "verdant-arcana-mod:blank_token"
+  }
+}
