@@ -22,7 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.MOON_TOKEN_2);
                         entries.add(ModItems.MOON_TOKEN_3);
                         entries.add(ModItems.MOON_TOKEN_4);
-                        entries.add(ModItems.CRESENT_LEXICON);
+                        entries.add(ModItems.CRESCENT_LEXICON);
                         // Add future charms, ingredients, and potion vials here
                         entries.add(ModBlocks.WITCH_ALTAR); // Optional: block added to group
                     }).build());

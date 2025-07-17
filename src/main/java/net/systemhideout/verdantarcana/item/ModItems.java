@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.systemhideout.verdantarcana.VerdantArcanaMod;
 import net.systemhideout.verdantarcana.block.ModBlocks;
-import net.systemhideout.verdantarcana.item.custom.CresentLexiconItem;
+import net.systemhideout.verdantarcana.item.custom.CrescentLexiconItem;
 
 import java.util.function.Function;
 
@@ -47,8 +47,8 @@ public class ModItems {
     public static final Item MOON_TOKEN_3 = registerItem("moon_token_3", Item::new);
     public static final Item MOON_TOKEN_4 = registerItem("moon_token_4", Item::new);
 
-    public static final Item CRESENT_LEXICON = registerItem("cresent_lexicon",
-            settings -> new CresentLexiconItem(settings.maxCount(1)));
+    public static final Item CRESCENT_LEXICON = registerItem("crescent_lexicon",
+            settings -> new CrescentLexiconItem(settings.maxCount(1)));
 
     private static Item registerItem(String name, Function<Item.Settings, Item> factory) {
         Identifier id = Identifier.of(VerdantArcanaMod.MOD_ID, name);

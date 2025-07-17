@@ -45,7 +45,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MANDRAKE, Models.GENERATED);
 
         // Witchy Items
-        itemModelGenerator.register(ModItems.CRESENT_LEXICON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRESCENT_LEXICON, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLANK_TOKEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.MOON_TOKEN_1, Models.GENERATED);
         itemModelGenerator.register(ModItems.MOON_TOKEN_2, Models.GENERATED);

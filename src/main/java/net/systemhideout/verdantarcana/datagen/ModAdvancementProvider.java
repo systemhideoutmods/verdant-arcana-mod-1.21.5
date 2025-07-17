@@ -37,6 +37,6 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .criterion("joined", Criteria.TICK.create(new TickCriterion.Conditions(Optional.empty())));
-        consumer.accept(builder.build(Identifier.of("system_hideout", "moon_fledgling")));
+        consumer.accept(builder.build(Identifier.of("verdant-arcana-mod", "moon_fledgling")));
     }
 }

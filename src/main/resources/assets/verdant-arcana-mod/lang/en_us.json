@@ -31,9 +31,9 @@
 
   "itemgroup.witch_items": "Witch Items",
 
-  "screen.verdant-arcana-mod.recipe_book": "Witch Recipe Book",
-  "item.verdant-arcana-mod.cresent_lexicon": "Cresent Lexicon",
-  "item.verdant-arcana-mod.cresent_lexicon.tooltip": "Right-click to open your lore and recipes",
+  "screen.verdant-arcana-mod.recipe_book": "Crescent Lexicon Book",
+  "item.verdant-arcana-mod.crescent_lexicon": "Crescent Lexicon",
+  "item.verdant-arcana-mod.crescent_lexicon.tooltip": "Right-click to open your lore and recipes",
 
   "advancement.verdant-arcana-mod.moon_fledgling.title": "Moon Fledgling",
   "advancement.verdant-arcana-mod.moon_fledgling.desc": "You have taken your first step under the moon's watchful eye."

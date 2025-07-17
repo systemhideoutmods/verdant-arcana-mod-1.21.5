@@ -12,7 +12,7 @@ import net.minecraft.client.render.RenderLayer;
 import net.systemhideout.verdantarcana.block.ModBlocks;
 import net.systemhideout.verdantarcana.block.entity.ModBlockEntities;
 import net.systemhideout.verdantarcana.block.entity.client.model.WitchAltarBookModel;
-import net.systemhideout.verdantarcana.item.custom.CresentLexiconItem;
+import net.systemhideout.verdantarcana.item.custom.CrescentLexiconItem;
 import net.systemhideout.verdantarcana.screen.ModScreenHandlers;
 import net.systemhideout.verdantarcana.screen.custon.RecipeBookScreen;
 
@@ -38,7 +38,7 @@ public class Client implements ClientModInitializer {
                 WitchAltarBlockEntityRenderer::new
         );
 
-        CresentLexiconItem.onClientUse = (player) -> {
+        CrescentLexiconItem.onClientUse = (player) -> {
             MinecraftClient client = MinecraftClient.getInstance();
             if (client != null && client.mouse != null) {
                 client.execute(() -> client.setScreen(new RecipeBookScreen()));

@@ -86,7 +86,7 @@ public class WitchAltarBlockEntity extends BlockEntity implements ExtendedScreen
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("block.system_hideout.witch_altar");
+        return Text.translatable("block.verdant-arcana-mod.witch_altar");
     }
 
     @Nullable
