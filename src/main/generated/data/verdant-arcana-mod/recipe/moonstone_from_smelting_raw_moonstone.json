@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "moonstone",
+  "ingredient": "verdant-arcana-mod:raw_moonstone",
+  "result": {
+    "id": "verdant-arcana-mod:moonstone"
+  }
+}

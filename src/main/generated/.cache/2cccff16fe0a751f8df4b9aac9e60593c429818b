@@ -1,0 +1,25 @@
+// 1.21.5	-999999999-01-01T00:00:00	Verdant Arcana Mod/VerdantArcana Recipes
+e5b8362ea413c2cad2238a075f134e4242d3d20e data/verdant-arcana-mod/advancement/recipes/building_blocks/moonstone.json
+89df09df10745f15a487e035e2e10a5a3e7fb05d data/verdant-arcana-mod/advancement/recipes/decorations/moonstone_block.json
+0daba1348ee0af2faa73d77043eab6ff3945ffc0 data/verdant-arcana-mod/advancement/recipes/misc/blank_totem.json
+86d71669289294ea39ae442c00885429bbe0e43a data/verdant-arcana-mod/advancement/recipes/misc/moon_totem_1.json
+cd879e153f6b984885e2c1cfbdbfcda2415565f8 data/verdant-arcana-mod/advancement/recipes/misc/moon_totem_2.json
+07b33491b2bb4b78885d4c379615a1ed67be45ee data/verdant-arcana-mod/advancement/recipes/misc/moon_totem_3.json
+9c15200999e7bf763c342a5f3323f1ebaeac1d88 data/verdant-arcana-mod/advancement/recipes/misc/moon_totem_4.json
+81901547b7f7c435711e70a3bffade360f559f3c data/verdant-arcana-mod/advancement/recipes/misc/moonstone_from_blasting_raw_moonstone.json
+ff53663343a20434befc6b5a5964dcb870c75eba data/verdant-arcana-mod/advancement/recipes/misc/moonstone_from_smelting_raw_moonstone.json
+d755f7e45786d169db1d293a714b552f0c37aefe data/verdant-arcana-mod/advancement/recipes/misc/pink_salt.json
+81411983f47327a17a49153bc6cbd527777ea4da data/verdant-arcana-mod/advancement/recipes/misc/raw_moonstone.json
+feefbb88a595896a27c4b20a7b2bfe04f50512f2 data/verdant-arcana-mod/advancement/recipes/misc/raw_moonstone_block.json
+46373c7c836f198b103c08e69155bfbf384963a2 data/verdant-arcana-mod/recipe/blank_totem.json
+dfb5b2fb588f8e97ff47789828ad54b412688196 data/verdant-arcana-mod/recipe/moon_totem_1.json
+b7aeecab63c0f8b58ad2b3c11dd38f696b7b28ec data/verdant-arcana-mod/recipe/moon_totem_2.json
+f505c95b39ea98d989d0c607bb7c548f680c22ad data/verdant-arcana-mod/recipe/moon_totem_3.json
+705e15f4926b910d1ca41b175902533d972df8fa data/verdant-arcana-mod/recipe/moon_totem_4.json
+fccb2c5320969f2301ced7f1244b3438b1573350 data/verdant-arcana-mod/recipe/moonstone.json
+06ddacf5908cf22fc3319cb712987ba9cf02b630 data/verdant-arcana-mod/recipe/moonstone_block.json
+c0dc4e50f60e924c1493e2a1988c9dea8e3d1272 data/verdant-arcana-mod/recipe/moonstone_from_blasting_raw_moonstone.json
+a90d14fa7db052799686d6e7072343038fd3b8ea data/verdant-arcana-mod/recipe/moonstone_from_smelting_raw_moonstone.json
+7bb3099e581a1c176599ecc2db598e22f24da010 data/verdant-arcana-mod/recipe/pink_salt.json
+fb8b93e0b7b2f680e434362c6729a4e328a45078 data/verdant-arcana-mod/recipe/raw_moonstone.json
+410cb0b74bc4283e7e180d2e316544d9631f74fa data/verdant-arcana-mod/recipe/raw_moonstone_block.json

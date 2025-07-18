@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "verdant-arcana-mod:moonstone_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "verdant-arcana-mod:moonstone"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "verdant-arcana-mod:block/raw_moonstone_block"
+  }
+}
