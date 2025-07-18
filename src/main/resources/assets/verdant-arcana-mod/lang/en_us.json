@@ -9,6 +9,7 @@
   "item.verdant-arcana-mod.mugwort_seeds": "Mugwort Seeds",
   "item.verdant-arcana-mod.mandrake": "Mandrake",
   "item.verdant-arcana-mod.mandrake_seeds": "Mandrake Root",
+  "item.verdant-arcana-mod.pink_salt": "Pink Salt",
 
   "item.verdant-arcana-mod.blank_token": "Blank Token",
   "item.verdant-arcana-mod.moon_token_1": "New Moon Token",
@@ -35,6 +36,13 @@
   "item.verdant-arcana-mod.crescent_lexicon": "Crescent Lexicon",
   "item.verdant-arcana-mod.crescent_lexicon.tooltip": "Right-click to open your lore and recipes",
 
-  "advancement.verdant-arcana-mod.moon_fledgling.title": "Moon Fledgling",
-  "advancement.verdant-arcana-mod.moon_fledgling.desc": "You have taken your first step under the moon's watchful eye."
+  "item.verdant-arcana-mod.phial_of_hollow_sight": "Phial of Hollow Sight",
+  "item.verdant-arcana-mod.phial_of_hollow_sight.effect.0": "Invisibility (0:15)",
+  "item.verdant-arcana-mod.phial_of_hollow_sight.effect.1": "Night Vision (1:30)",
+  "item.verdant-arcana-mod.phial_of_hollow_sight.effect.2": "Nausea (0:04)",
+  "item.verdant-arcana-mod.phial_of_hollow_sight.effect.3": "Speed I (0:10)",
+  "item.verdant-arcana-mod.phial_of_hollow_sight.flavor": "“Slip through the world like a half-remembered dream.”",
+
+  "advancement.verdant-arcana-mod.quest.chapter1.title": "Chapter 1 Complete",
+  "advancement.verdant-arcana-mod.quest.chapter1.desc": "You’ve completed the first quest chapter."
 }

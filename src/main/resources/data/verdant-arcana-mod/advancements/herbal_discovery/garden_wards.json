@@ -1,0 +1,31 @@
+{
+  "parent": "verdant-arcana:herbal_discovery/first_forage",
+  "display": {
+    "icon": { "item": "minecraft:potted_azalea_bush" },
+    "title": { "text": "Garden Wards" },
+    "description": { "text": "A rooted charm is a guarded one." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "planted_herb": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {},
+        "item": {
+          "items": [
+            "verdant-arcana:sage_seeds",
+            "verdant-arcana:chamomile_seeds",
+            "verdant-arcana:lavender_seeds",
+            "verdant-arcana:mugwort_seeds"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5
+  }
+}

@@ -8,8 +8,8 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.systemhideout.verdantarcana.VerdantArcanaMod;
-import net.systemhideout.verdantarcana.screen.custon.RecipeBookScreenHandler;
-import net.systemhideout.verdantarcana.screen.custon.WitchAltarScreenHandler;
+import net.systemhideout.verdantarcana.screen.custom.RecipeBookScreenHandler;
+import net.systemhideout.verdantarcana.screen.custom.WitchAltarScreenHandler;
 
 
 public class ModScreenHandlers {
@@ -33,6 +33,7 @@ public class ModScreenHandlers {
                             FeatureFlags.VANILLA_FEATURES
                     )
             );
+
 
     public static void registerScreenHandlers() {
         VerdantArcanaMod.LOGGER.info("Registering Screen Handlers for " + VerdantArcanaMod.MOD_ID);

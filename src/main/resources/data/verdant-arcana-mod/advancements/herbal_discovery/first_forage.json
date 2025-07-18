@@ -1,0 +1,26 @@
+{
+  "parent": "verdant-arcana:root",
+  "display": {
+    "icon": {
+      "item": "verdant-arcana:sage"
+    },
+    "title": "First Forage",
+    "description": "Even the smallest leaf may open ancient doors.",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "herb_pickup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["verdant-arcana:sage", "verdant-arcana:chamomile", "verdant-arcana:lavender", "verdant-arcana:mugwort"] }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 3
+  }
+}

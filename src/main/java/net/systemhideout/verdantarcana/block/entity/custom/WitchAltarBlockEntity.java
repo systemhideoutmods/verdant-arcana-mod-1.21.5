@@ -27,7 +27,7 @@ import net.systemhideout.verdantarcana.block.entity.ModBlockEntities;
 import net.systemhideout.verdantarcana.recipe.WitchAltarRecipe;
 import net.systemhideout.verdantarcana.recipe.WitchAltarRecipeInput;
 import net.systemhideout.verdantarcana.recipe.ModRecipes;
-import net.systemhideout.verdantarcana.screen.custon.WitchAltarScreenHandler;
+import net.systemhideout.verdantarcana.screen.custom.WitchAltarScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;

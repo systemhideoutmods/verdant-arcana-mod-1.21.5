@@ -1,0 +1,26 @@
+{
+  "parent": "verdant-arcana:root",
+  "display": {
+    "icon": {
+      "item": "verdant-arcana:phial"
+    },
+    "title": "First Brew",
+    "description": "The first sip seals the circle.",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_phial": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["verdant-arcana:phial"] }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 6
+  }
+}

@@ -1,6 +1,7 @@
 package net.systemhideout.verdantarcana.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -10,17 +11,30 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.systemhideout.verdantarcana.VerdantArcanaMod;
 import net.systemhideout.verdantarcana.block.ModBlocks;
 import net.systemhideout.verdantarcana.item.custom.CrescentLexiconItem;
+import net.systemhideout.verdantarcana.item.custom.PhialOfHollowSightItem;
 
 import java.util.function.Function;
 
 public class ModItems {
 
     // Food
+    public static final Item PHIAL_OF_HOLLOW_SIGHT = registerItem("phial_of_hollow_sight",
+            settings -> new PhialOfHollowSightItem(settings
+                    .maxCount(16)
+                    .rarity(Rarity.UNCOMMON)
+                    .fireproof()
+            )
+    );
+
     //public static final Item CHEESE = registerItem("cheese",
     //        settings -> new Item(settings.food(ModFoodComponents.CHEESE)));
+
+    // Ingredients
+    public static final Item PINK_SALT = registerItem("pink_salt", Item::new);
 
     // Gems
     public static final Item MOONSTONE = registerItem("moonstone", Item::new);
@@ -77,6 +91,7 @@ public class ModItems {
             entries.add(SAGE);
             entries.add(MUGWORT);
             entries.add(MANDRAKE);
+            entries.add(PINK_SALT);
         });
 
         // NATURAL

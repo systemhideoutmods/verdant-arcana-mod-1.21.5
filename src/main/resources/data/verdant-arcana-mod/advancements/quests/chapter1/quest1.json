@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "complete_quest": {
+      "trigger": "verdant-arcana-mod:quest_completed",
+      "conditions": {
+        "quest_id": "chapter1/quest1"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "display": {
+    "icon": {
+      "item": "minecraft:book"
+    },
+    "title": {
+      "translate": "quest.chapter1.quest1.title"
+    },
+    "description": {
+      "translate": "quest.chapter1.quest1.description"
+    },
+    "hidden": true
+  }
+}

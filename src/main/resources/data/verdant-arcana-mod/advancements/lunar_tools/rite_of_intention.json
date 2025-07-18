@@ -1,0 +1,30 @@
+{
+  "parent": "verdant-arcana:lunar_tools/phasebound",
+  "display": {
+    "icon": { "item": "verdant-arcana-mod:full_moon_token" },
+    "title": { "text": "Rite of Intention" },
+    "description": { "text": "Only through use does intention become real." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "used_phase_token": {
+      "trigger": "verdant-arcana:altar_ritual",
+      "conditions": {
+        "ingredients": [
+          { "items": [
+            "verdant-arcana:waxing_moon_token",
+            "verdant-arcana:full_moon_token",
+            "verdant-arcana:new_moon_token",
+            "verdant-arcana:waning_moon_token"
+          ]}
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "items": ["minecraft:amethyst_shard"]
+  }
+}

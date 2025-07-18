@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "on_tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    ["on_tick"]
+  ],
+  "display": {
+    "icon": {
+      "item": "minecraft:book"
+    },
+    "title": {
+      "translate": "advancement.verdant-arcana-mod.quest.chapter1.title"
+    },
+    "description": {
+      "translate": "advancement.verdant-arcana-mod.quest.chapter1.desc"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  }
+}

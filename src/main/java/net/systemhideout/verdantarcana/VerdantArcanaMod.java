@@ -1,9 +1,7 @@
 package net.systemhideout.verdantarcana;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-
 import net.systemhideout.verdantarcana.block.ModBlocks;
 import net.systemhideout.verdantarcana.block.entity.ModBlockEntities;
 import net.systemhideout.verdantarcana.item.ModItemGroups;
@@ -13,6 +11,7 @@ import net.systemhideout.verdantarcana.screen.ModScreenHandlers;
 import net.systemhideout.verdantarcana.util.ModLootTableModifiers;
 import net.systemhideout.verdantarcana.util.ModVillagerTrades;
 import net.systemhideout.verdantarcana.world.gen.ModWorldGeneration;
+import net.systemhideout.verdantarcana.network.ModNetworking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +23,7 @@ public class VerdantArcanaMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModNetworking.register();
 		ModItemGroups.registerItemGroups();
 
 		ModItems.registerModItems();

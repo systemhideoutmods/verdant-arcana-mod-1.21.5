@@ -1,0 +1,11 @@
+{
+  "type": "verdant-arcana-mod:witch_altar",
+  "inputItem0": "verdant-arcana-mod:moon_token_2",
+  "inputItem1": "minecraft:spider_eye",
+  "inputItem2": "verdant-arcana-mod:mugwort",
+  "inputItem3": "minecraft:poppy",
+  "result": {
+    "count": 1,
+    "id": "verdant-arcana-mod:phial_of_hollow_sight"
+  }
+}

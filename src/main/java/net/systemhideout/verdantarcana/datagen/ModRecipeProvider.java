@@ -52,6 +52,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.RAW_MOONSTONE_BLOCK), conditionsFromItem(ModBlocks.RAW_MOONSTONE_BLOCK))
                         .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC,ModItems.PINK_SALT, 1)
+                        .input(Items.RED_SAND)
+                        .input(Items.SUGAR)
+                        .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
+                        .criterion(hasItem(Items.RED_SAND), conditionsFromItem(Items.RED_SAND))
+                        .offerTo(exporter);
+
                 generateMoonRecipes();
 
             }
@@ -62,25 +69,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" B ")
                         .pattern("   ")
                         .input('M', ModItems.MOONSTONE)
-                        .input('B', Items.BONE)
-                        .criterion(hasItem(Items.BONE), conditionsFromItem(Items.BONE))
+                        .input('B', Items.IRON_NUGGET)
+                        .criterion(hasItem(ModItems.MOONSTONE), conditionsFromItem(ModItems.MOONSTONE))
                         .offerTo(exporter, "blank_totem");
 
                 createShapeless(RecipeCategory.MISC, ModItems.MOON_TOKEN_1)
                         .input(ModItems.BLANK_TOKEN)
-                        .input(Items.GLOWSTONE_DUST)
+                        .input(Items.INK_SAC)
                         .criterion(hasItem(ModItems.BLANK_TOKEN), conditionsFromItem(ModItems.BLANK_TOKEN))
                         .offerTo(exporter, "moon_totem_1");
 
                 createShapeless(RecipeCategory.MISC, ModItems.MOON_TOKEN_2)
                         .input(ModItems.BLANK_TOKEN)
-                        .input(Items.ENDER_PEARL)
+                        .input(Items.RED_MUSHROOM)
                         .criterion(hasItem(ModItems.BLANK_TOKEN), conditionsFromItem(ModItems.BLANK_TOKEN))
                         .offerTo(exporter, "moon_totem_2");
 
                 createShapeless(RecipeCategory.MISC, ModItems.MOON_TOKEN_3)
                         .input(ModItems.BLANK_TOKEN)
-                        .input(Items.AMETHYST_SHARD)
+                        .input(Items.GLOW_BERRIES)
                         .criterion(hasItem(ModItems.BLANK_TOKEN), conditionsFromItem(ModItems.BLANK_TOKEN))
                         .offerTo(exporter, "moon_totem_3");
 

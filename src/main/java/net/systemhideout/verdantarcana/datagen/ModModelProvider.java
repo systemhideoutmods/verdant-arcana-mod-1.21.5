@@ -38,6 +38,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MOONSTONE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_MOONSTONE, Models.GENERATED);
 
+        // Ingredient
+        itemModelGenerator.register(ModItems.PINK_SALT, Models.GENERATED);
+
         // Herbs
         itemModelGenerator.register(ModItems.LAVENDER, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAGE, Models.GENERATED);
@@ -51,6 +54,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MOON_TOKEN_2, Models.GENERATED);
         itemModelGenerator.register(ModItems.MOON_TOKEN_3, Models.GENERATED);
         itemModelGenerator.register(ModItems.MOON_TOKEN_4, Models.GENERATED);
+
+        // Altar Crafts
+        itemModelGenerator.register(ModItems.PHIAL_OF_HOLLOW_SIGHT, Models.GENERATED);
 
         //Block Items
         itemModelGenerator.register(ModBlocks.WITCH_ALTAR.asItem(), Models.GENERATED);

@@ -1,0 +1,24 @@
+{
+  "parent": "verdant-arcana:root",
+  "display": {
+    "icon": {
+      "item": "verdant-arcana:blank_moon_token"
+    },
+    "title": "Shape the Moon",
+    "description": "The path begins with unshaped intent.",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_token": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "verdant-arcana:blank_moon_token"
+      }
+    }
+  },
+  "rewards": {
+    "item": ["minecraft:glow_ink_sac"]
+  }
+}

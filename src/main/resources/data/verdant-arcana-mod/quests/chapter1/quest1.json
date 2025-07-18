@@ -1,0 +1,15 @@
+{
+  "name": "Moonlit Awakening",
+  "flavor": "You awaken under the pale glow of the moon, a strange tome beside you... Something ancient stirs.",
+  "requirements": [],
+  "rewards": {
+    "xp": 25,
+    "items": [
+      {
+        "id": "verdant-arcana:crescent-lexicon",
+        "count": 1
+      }
+    ],
+    "lore": "intro_awakened"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "parent": "verdant-arcana:herbal_discovery/garden_wards",
+  "display": {
+    "icon": { "item": "verdant-arcana:pink_salt" },
+    "title": { "text": "Circle of Salt" },
+    "description": { "text": "Boundary defines the sacred." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "used_pink_salt": {
+      "trigger": "verdant-arcana:altar_ritual",
+      "conditions": {
+        "ingredients": [{ "item": "verdant-arcana:pink_salt" }]
+      }
+    }
+  },
+  "rewards": {
+    "items": ["verdant-arcana-mod:pink_salt"]
+  }
+}

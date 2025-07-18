@@ -1,0 +1,30 @@
+{
+  "parent": "verdant-arcana:lunar_tools/shape_the_moon",
+  "display": {
+    "icon": { "item": "verdant-arcana-mod:full_moon_token" },
+    "title": { "text": "Phasebound" },
+    "description": { "text": "Your hands carry the pull of tides." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "crafted_phase_token": {
+      "trigger": "minecraft:crafted_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "verdant-arcana:new_moon_token",
+            "verdant-arcana:waxing_moon_token",
+            "verdant-arcana:waning_moon_token",
+            "verdant-arcana:full_moon_token"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5
+  }
+}

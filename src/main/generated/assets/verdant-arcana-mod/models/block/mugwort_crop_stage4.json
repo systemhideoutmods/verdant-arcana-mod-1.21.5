@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "verdant-arcana-mod:block/mugwort_crop_stage4"
-  }
-}
