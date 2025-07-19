@@ -4,9 +4,15 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.systemhideout.verdantarcana.herbs.HerbDiscoveryManager;
+import net.systemhideout.verdantarcana.util.ModTags;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +30,6 @@ public class RecipeBookScreen extends Screen {
     private final Map<String, List<String>> loreMap = new HashMap<>();
     private final String[] loreCategories = {"origins", "moon_phases", "charms", "rituals", "entities", "spells"};
     private final String[] loreDisplayNames = { "Origins", "Moon Phases", "Charms", "Rituals", "Entities", "Spells" };
-
 
     private int guiLeft;
     private int guiTop;
@@ -49,7 +54,7 @@ public class RecipeBookScreen extends Screen {
         tabButtons.clear();
         subButtons.clear();
 
-        // Add Moon Tabs
+        // Add 4 Moon Tabs + 1 Lore Tab
         for (int i = 0; i < 4; i++) {
             int x = guiLeft + 10 + (i * 55);
             int y = guiTop + 5;
@@ -62,27 +67,23 @@ public class RecipeBookScreen extends Screen {
             tabButtons.add(tab);
         }
 
-        // Lore tab
         ButtonWidget loreTab = ButtonWidget.builder(Text.literal("Lore"), btn -> switchTab(-1))
                 .position(guiLeft + 10 + (4 * 55), guiTop + 5)
                 .size(55, 20)
                 .build();
         addDrawableChild(loreTab);
 
-        loadLoreFromManager(); // correct location
-
+        loadLoreFromManager();
         switchTab(selectedTab);
     }
-
 
     private void switchTab(int index) {
         selectedTab = index;
 
-        // Clear lore sub buttons from screen first
+        // Clear lore sub buttons from screen
         subButtons.forEach(this::remove);
 
         if (selectedTab == -1) {
-            // Show lore sub buttons if applicable
             for (ButtonWidget sub : subButtons) {
                 if (!children().contains(sub)) {
                     addDrawableChild(sub);
@@ -90,8 +91,6 @@ public class RecipeBookScreen extends Screen {
             }
         }
     }
-
-
 
     private void switchLoreCategory(int index) {
         selectedLoreCategory = index;
@@ -107,8 +106,31 @@ public class RecipeBookScreen extends Screen {
     }
 
     @Override
+    public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
+        int left = guiLeft;
+        int top = guiTop;
+        int right = guiLeft + backgroundWidth;
+        int bottom = guiTop + backgroundHeight;
+
+        // Top area
+        context.fill(0, 0, width, top, 0xB0000000);
+        // Bottom area
+        context.fill(0, bottom, width, height, 0xB0000000);
+        // Left area
+        context.fill(0, top, left, bottom, 0xB0000000);
+        // Right area
+        context.fill(right, top, width, bottom, 0xB0000000);
+    }
+
+
+
+
+    @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackground(context, mouseX, mouseY, delta);
+        // This draws the darkened screen background (vanilla behavior)
+        renderBackground(context, mouseX, mouseY, delta);
+
+        // Draw your GUI texture
         context.drawTexture(
                 RenderLayer::getGuiTextured,
                 BACKGROUND_TEXTURE,
@@ -117,17 +139,21 @@ public class RecipeBookScreen extends Screen {
                 backgroundWidth, backgroundHeight,
                 336, 256
         );
-        context.drawBorder(guiLeft, guiTop, backgroundWidth, backgroundHeight, 0xFF00FF00);
 
+        // Optional: draw a debug border
+        // context.drawBorder(guiLeft, guiTop, backgroundWidth, backgroundHeight, 0xFF00FF00);
+
+        // Draw tab-specific contents
         if (selectedTab == -1) {
             renderLoreTab(context, mouseX, mouseY, delta);
         } else {
             renderRecipeTab(context, mouseX, mouseY, delta, selectedTab);
         }
 
+        // Draw tooltips or buttons
         super.render(context, mouseX, mouseY, delta);
-
     }
+
 
     private void renderLoreTab(DrawContext context, int mouseX, int mouseY, float delta) {
         int textX = guiLeft + 95;
@@ -143,16 +169,44 @@ public class RecipeBookScreen extends Screen {
     }
 
     private void renderRecipeTab(DrawContext context, int mouseX, int mouseY, float delta, int index) {
-        context.drawText(this.textRenderer, "Recipes for Moon Totem " + (index + 1), guiLeft + 10, guiTop + 35, 0xFFFFFF, false);
+        if (index == 0) {
+            context.drawText(this.textRenderer, "Discovered Herbs", (guiLeft + 10), (guiTop + 35), 0xFFFFFF, false);
 
-        int startX = guiLeft + 10;
-        int startY = guiTop + 50;
+            int startX = guiLeft + 10;
+            int startY = guiTop + 50;
+            int slot = 0;
 
-        for (int i = 0; i < 6; i++) {
-            int x = startX + (i % 3) * 50;
-            int y = startY + (i / 3) * 40;
-            context.fill(x, y, x + 40, y + 30, 0xFF333333);
-            context.drawText(this.textRenderer, "???", x + 12, y + 10, 0xFFFFFF, false);
+            for (RegistryEntry<Item> entry : Registries.ITEM.iterateEntries(ModTags.Items.WITCHY_CROPS)) {
+                Item herb = entry.value();
+                ItemStack stack = new ItemStack(herb);
+
+                int x = startX + (slot % 4) * 60;
+                int y = startY + (slot / 4) * 60;
+
+                boolean discovered = HerbDiscoveryManager.hasDiscovered(herb);
+
+                if (discovered) {
+                    context.drawItem(stack, x, y);
+                    context.drawText(this.textRenderer, stack.getName(), x, y + 20, 0xFFFFFF, false);
+                } else {
+                    context.fill(x, y, x + 16, y + 16, 0xFF444444);
+                    context.drawText(this.textRenderer, "???", x, y + 20, 0x888888, false);
+                }
+
+                slot++;
+            }
+        } else {
+            context.drawText(this.textRenderer, "Recipes for Moon Totem " + (index + 1), guiLeft + 10, guiTop + 35, 0xFFFFFF, false);
+
+            int startX = guiLeft + 10;
+            int startY = guiTop + 50;
+
+            for (int i = 0; i < 6; i++) {
+                int x = startX + (i % 3) * 50;
+                int y = startY + (i / 3) * 40;
+                context.fill(x, y, x + 40, y + 30, 0xFF333333);
+                context.drawText(this.textRenderer, "???", x + 12, y + 10, 0xFFFFFF, false);
+            }
         }
     }
 
@@ -163,15 +217,13 @@ public class RecipeBookScreen extends Screen {
                 List<String> lines = net.systemhideout.verdantarcana.lore.LoreManager.getLore(key);
                 loreMap.put(key, lines);
 
-                // Add subcategory button only if this lore exists
                 int index = i;
                 ButtonWidget sub = ButtonWidget.builder(Text.literal(loreDisplayNames[i]), btn -> switchLoreCategory(index))
-                        .position(guiLeft + 5, guiTop + 35 + (subButtons.size() * 25)) // stagger only visible ones
+                        .position(guiLeft + 5, guiTop + 35 + (subButtons.size() * 25))
                         .size(80, 20)
                         .build();
                 subButtons.add(sub);
             }
         }
     }
-
 }

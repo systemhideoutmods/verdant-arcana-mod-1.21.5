@@ -1,34 +1,59 @@
 package net.systemhideout.verdantarcana;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.minecraft.advancement.AdvancementEntry;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
+import net.minecraft.util.ActionResult;
+import net.systemhideout.verdantarcana.herbs.HerbDiscoveryManager;
+import net.systemhideout.verdantarcana.util.ModTags;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class ModEvents {
 
-    private static final Identifier BOOK_ADVANCEMENT_ID = Identifier.of("verdant-arcana", "moon_fledgling");
-    private static final Set<UUID> processedPlayers = new HashSet<>();
+    private static final WeakHashMap<UUID, Set<String>> trackedInventory = new WeakHashMap<>();
 
     public static void registerEvents() {
-        ServerTickEvents.END_SERVER_TICK.register(server -> {
+
+        // Right-click with item in hand
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            if (world.isClient || !(player instanceof ServerPlayerEntity serverPlayer)) return ActionResult.PASS;
+
+            ItemStack stack = serverPlayer.getStackInHand(hand);
+            HerbDiscoveryManager.tryDiscoverHerb(serverPlayer, stack);
+            return ActionResult.PASS;
+        });
+
+        // Break block
+        PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
+            if (!world.isClient && player instanceof ServerPlayerEntity serverPlayer) {
+                for (RegistryEntry<Item> entry : Registries.ITEM.iterateEntries(ModTags.Items.WITCHY_CROPS)) {
+                    HerbDiscoveryManager.tryDiscoverHerb(serverPlayer, new ItemStack(entry.value()));
+                }
+            }
+        });
+
+        // Inventory scan per tick
+        ServerTickEvents.END_SERVER_TICK.register((MinecraftServer server) -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+                Set<String> seen = trackedInventory.computeIfAbsent(player.getUuid(), p -> new HashSet<>());
 
-                // Skip players we've already processed
-                if (processedPlayers.contains(player.getUuid())) continue;
+                // Access inventory safely
+                for (int i = 0; i < player.getInventory().size(); i++) {
+                    ItemStack stack = player.getInventory().getStack(i);
+                    if (stack.isEmpty()) continue;
 
-                AdvancementEntry advancement = server.getAdvancementLoader().get(BOOK_ADVANCEMENT_ID);
-                if (advancement != null &&
-                        !player.getAdvancementTracker().getProgress(advancement).isDone()) {
-
-                    VerdantArcanaMod.LOGGER.info("Granting advancement to {}", player.getGameProfile().getName());
-
-                    player.getAdvancementTracker().grantCriterion(advancement, "joined");
-                    processedPlayers.add(player.getUuid());
+                    String id = Registries.ITEM.getId(stack.getItem()).toString();
+                    if (!seen.contains(id)) {
+                        seen.add(id);
+                        HerbDiscoveryManager.tryDiscoverHerb(player, stack);
+                    }
                 }
             }
         });
